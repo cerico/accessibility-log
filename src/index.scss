@@ -56,11 +56,11 @@ em {
   @extend %font !optional;
   height: 100vh;
   main {
-    @extend %redlight !optional;
+   @extend %redlight !optional;
+
     padding-left: 2.5rem;
     padding-right: 2.5rem;
     min-height: 88vh;
-    background: rgb(224 140 124 / 50%);
     border-bottom: 8px solid black;
   }
   header {
