@@ -1,0 +1,12 @@
+---
+- name: Prepare
+  hosts: localhost
+  connection: local 
+  tasks:
+    - name: register entries
+      shell: "seq 1 `ls {{ playbook_dir }}/_imports/posts | wc -l | tr -d '\n'`" 
+      register: sequence
+    - name: create entries
+      template:
+        src: entries.html.j2
+        dest: "{{ playbook_dir }}/_imports/entries.html"

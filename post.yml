@@ -1,0 +1,12 @@
+---
+- name: Prepare
+  hosts: localhost
+  connection: local 
+  tasks:
+    - name: register entries
+      shell: "ls {{ playbook_dir }}/_imports/posts | wc -l" 
+      register: wow
+    - name: create entries
+      template:
+        src: post.md.j2
+        dest: "{{ playbook_dir }}/_imports/posts/{{ (wow.stdout|int) + 1}}.md"

@@ -1,0 +1,125 @@
+@use 'variables';
+
+@font-face {
+  font-family: 'Century Schoolbook L';
+  src: url('CenturySchL-Roma.woff2') format('woff2'),
+       url('CenturySchL-Roma.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+%color {
+  @extend %redlight !optional;
+}
+
+%font {
+  font-family: 'Century Schoolbook L';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body  {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+li { list-style: none; }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+  column-span: all;
+  font-size: 1.375rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+em {
+  color: #db5439;
+  color: #d62400;
+}
+
+.fifty-eight {
+  @extend %paper !optional;
+  @extend %font !optional;
+  height: 100vh;
+  main {
+    @extend %redlight !optional;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    min-height: 88vh;
+    background: rgb(224 140 124 / 50%);
+    border-bottom: 8px solid black;
+  }
+  header {
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+      padding-bottom: 0.9375rem;
+      padding-top: 0.9375rem;
+      border-bottom: 2px solid;
+    }
+  }
+  p { font-size: 1.125rem; }
+  h3 { font-family: 'Cormorant Garamond'; font-display: swap; font-size: 1.6rem;
+    font-weight: 400; }
+  a, b, body, canvas, caption, dd, dl, dt, figure, form, h1, h2, h3, h4, header, html, i, img, li, menu, nav, object, p, pre, s, span, summary, time, ul, var {
+    margin: 0;
+    padding: 0;
+  }
+
+  .title {
+    padding-top: 8.125rem;
+    padding-bottom: 1.5625rem;
+    line-height: 1.12;
+    // font-size: 3.3125rem;
+    border-bottom: 2px solid;
+  }
+  .item, li {
+    align-items: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid;
+    display: flex;
+  }
+  .table li:last-child {
+    border-bottom: 0px;
+  }
+  dl {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.w50, h3 { font-family: 'Cormorant Garamond'; width: 100%; font-size: 2rem};
+.w35, p:nth-child(2) { display: none};
+.w15, p:nth-child(3) { display: none};
+
+.hide {
+  display: none
+}
+
+.table-top {
+  p:nth-child(1) { width: 35%;  }
+}
+
+@media (min-width:768px) {
+  .w50, h3 { width: 35% };
+  .w35, p:nth-child(2) { width: 50%; display: block };
+  .w15, p:nth-child(3) { width: 15%; display: block};
+}
+

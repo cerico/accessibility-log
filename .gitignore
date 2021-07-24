@@ -1,0 +1,5 @@
+node_modules
+public
+.vscode
+files/*.css
+_imports/entries.html
