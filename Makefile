@@ -1,8 +1,7 @@
 entries:
 	ansible-playbook entries.yml
 post:
-	node post.js
-	make entries
+	ansible-playbook post.yml
 publish:
 	npm run build
 	ansible-playbook deploy/publish.yml
