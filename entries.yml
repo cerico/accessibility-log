@@ -4,9 +4,22 @@
   connection: local 
   tasks:
     - name: register entries
-      shell: "seq 1 `ls {{ playbook_dir }}/_imports/posts | wc -l | tr -d '\n'`" 
+      shell: "seq `ls {{ playbook_dir }}/_imports/posts | wc -l | tr -d '\n'` 1" 
       register: sequence
+    - name: gg
+      shell: "echo posts"
+      register: category
     - name: create entries
       template:
         src: entries.html.j2
         dest: "{{ playbook_dir }}/_imports/entries.html"
+    - name: register bestpractices
+      shell: "seq `ls {{ playbook_dir }}/_imports/bestpractices | wc -l | tr -d '\n'` 1" 
+      register: sequence
+    - name: gg
+      shell: "echo bestpractices"
+      register: category
+    - name: create z
+      template:
+        src: entries.html.j2
+        dest: "{{ playbook_dir }}/_imports/bestpractices.html"

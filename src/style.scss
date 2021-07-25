@@ -1,1 +1,71 @@
-@import 'index';
+@use 'base';
+@use 'variables' as v;
+
+
+.fifty-eight {
+  @extend %paper !optional;
+  @extend %font !optional;
+  height: 100vh;
+  main, .z {
+    @extend %redlight !optional;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    min-height: 88vh;
+    border-bottom: 8px solid v.$black; }
+  .z {
+    @extend %typewriter !optional
+  }
+  h2 {
+    column-span: all;
+    font-size: 1.375rem;
+    font-style: italic;
+    text-align: left;
+    text-transform: uppercase;}
+  em { color: #d62400;}
+  p { font-size: 1.125rem; }
+  h3 {
+    font-family: 'Cormorant Garamond';
+    font-display: swap;
+    font-size: 1.6rem;
+    font-weight: 400; }
+  .title {
+    padding-top: 8.125rem;
+    padding-bottom: 1.5625rem;
+    line-height: 1.12;
+    border-bottom: 2px solid;}
+  li {
+    align-items: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid;
+    display: flex;
+  }
+  .table li:last-child {
+    border-bottom: 0px;}
+  dl {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;}
+  h3 {
+    font-family: 'Cormorant Garamond';
+    width: 100%;
+    font-size: 2rem};
+  p:nth-child(3) { display: none};
+  .table-top { display: none}
+
+  @media (min-width:768px) {
+    h3 { width: 35% };
+    p:nth-child(2) { width: 50%; display: block };
+    p:nth-child(3) { width: 15%; display: block};
+    .table-top {
+      display: block;
+      p:nth-child(1) { width: 35%;  }
+    }
+    li div { width: 100%; display: flex }
+    dl {
+      column-count: 3;
+      column-gap: 4vw;
+    }
+  }
+}

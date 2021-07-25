@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body  {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+li { list-style: none; }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a, b, body, canvas, caption, dd, dl, dt, figure, form, h1, h2, h3, h4, header, html, i, img, li, menu, nav, object, p, pre, s, span, summary, time, ul, var {
+  margin: 0;
+  padding: 0;
+}

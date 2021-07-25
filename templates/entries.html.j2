@@ -1,5 +1,5 @@
 {% for a in sequence.stdout %}
   {% if a|int > 0 %}
-    <li><sergey-import src="posts/{{ a }}" as="markdown" /></li>
+    <li><div><sergey-import src="{{ category.stdout }}/{{ a }}" as="markdown" /></div></li>
   {% endif %}
 {% endfor %}
