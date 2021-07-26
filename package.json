@@ -4,8 +4,6 @@
   "description": "a11y",
   "main": "server.js",
   "dependencies": {
-    "@kba/makefile-parser": "0.0.3",
-    "chalk": "^2.4.2",
     "cli-select": "^1.0.2",
     "css-mqpacker": "^7.0.0",
     "inquirer": "^8.1.2",
