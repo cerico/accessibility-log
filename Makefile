@@ -1,7 +1,7 @@
 entries:
 	ansible-playbook entries.yml
-post:
-	ansible-playbook post.yml
+entry:
+	ansible-playbook entry.yml
 	@echo Please edit: `ls -d _imports/posts`/`ls -tr _imports/posts | tail -1` 
 	@ansible-playbook entries.yml > /dev/null
 publish:
